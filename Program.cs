@@ -6,7 +6,11 @@ namespace CalculateProjeck
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ConsoleUI c = new ConsoleUI();
+            while (true)
+            {
+                c.Home();
+            }
         }
     }
 }
