@@ -7,7 +7,6 @@ namespace CalculateProjeck.Calculate
     class Calculator
     {
         private Func<ConsoleKey, IOperation> _operation;
-        private IOperation operation;
         public readonly List<string> SinvolesSmolePosition;
         public readonly List<string> SinvolesBigPosition;
         public Calculator(Func<ConsoleKey, IOperation> operation)

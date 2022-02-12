@@ -9,7 +9,7 @@ namespace CalculateProjeck
             ConsoleUI c = new ConsoleUI();
             while (true)
             {
-                c.Home();
+                c.Calculator();
             }
         }
     }
