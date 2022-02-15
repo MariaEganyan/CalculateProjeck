@@ -8,11 +8,13 @@ namespace CalculateProjeck
 {
     class ConsoleUI
     {
+        private ICalculatorCreater _calculatormeneg;
         private Calculator _calculator;
         private double _result;
         public ConsoleUI()
         {
-            _calculator = new Calculator(Operation);
+            _calculatormeneg = new MenegCalculator();
+            _calculator = _calculatormeneg.CreatCalculator();
         }
         public void Calculator()
         {
@@ -52,7 +54,7 @@ namespace CalculateProjeck
             ConsoleKey key = Console.ReadKey().Key;
             Console.WriteLine("second number:");
             double secondNumber = double.Parse(Console.ReadLine());
-            double result = _calculator.Test(key, firstNumber, secondNumber);
+            double result = _calculator.Calculate(key, firstNumber, secondNumber);
             Console.WriteLine("Resulte:{0}", result);
             return result;
         }
@@ -60,33 +62,11 @@ namespace CalculateProjeck
         {
             Console.WriteLine("second number:");
             double secondNumber = double.Parse(Console.ReadLine());
-            double result = _calculator.Test(key, firstNumber, secondNumber);
+            double result = _calculator.Calculate(key, firstNumber, secondNumber);
             Console.WriteLine("Resulte:{0}", result);
             return result;
 
         }
-        private IOperation Operation(ConsoleKey key)
-        {
-            IOperation operation = new Sum();
-            switch (key)
-            {
-                case ConsoleKey.Subtract:
-                    Subtraction subtract = new Subtraction();
-                    operation = subtract;
-                    break;
-
-                case ConsoleKey.Divide:
-                    Divide divide = new Divide();
-                    operation = divide;
-                    break;
-
-                case ConsoleKey.Multiply:
-                    Multiple multiple = new Multiple();
-                    operation = multiple;
-                    break;
-            }
-            return operation;
-
-        }
+        
     }
 }
