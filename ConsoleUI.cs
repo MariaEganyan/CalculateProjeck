@@ -1,6 +1,5 @@
 ﻿using CalculateProjeck.Calculate;
 using CalculateProjeck.Interfaces;
-using CalculateProjeck.Operations;
 using System;
 
 
@@ -32,7 +31,10 @@ namespace CalculateProjeck
                     case ConsoleKey.D1:
                         Console.Clear();
                         Console.WriteLine("First Number:{0}", _result);
-                        Console.WriteLine("+" + " " + "-" + " " + "*" + " " + "/");
+                        foreach(var operationkey in _calculator._operations)
+                        {
+                            Console.WriteLine(operationkey.ToString());
+                        }
                         ConsoleKey key1 = Console.ReadKey().Key;
                         _result=ContinueCalculate(_result, key1);
                         break;
@@ -50,7 +52,10 @@ namespace CalculateProjeck
             Console.WriteLine("first number:");
             double firstNumber = double.Parse(Console.ReadLine());
             Console.WriteLine("Choos operation");
-            Console.WriteLine("+" + " " + "-" + " " + "*" + " " + "/");
+            foreach (var operationkey in _calculator._operations)
+            {
+                Console.WriteLine(operationkey.ToString());
+            }
             ConsoleKey key = Console.ReadKey().Key;
             Console.WriteLine("second number:");
             double secondNumber = double.Parse(Console.ReadLine());

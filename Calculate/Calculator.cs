@@ -1,4 +1,4 @@
-﻿using CalculateProjeck.Interfaces;
+﻿using OperationsLIB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ namespace CalculateProjeck.Calculate
 {
     class Calculator
     {
-        private IEnumerable<IOperation> _operations;
+        public IEnumerable<IOperation> _operations;
 
         public Calculator(IEnumerable<IOperation> operations)
         {
